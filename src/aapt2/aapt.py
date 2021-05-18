@@ -107,7 +107,7 @@ def get_apk_info(file_path):
 
 def get_icon_path(stdout):
     match = re.compile(
-        "application: label='([\u4e00-\u9fa5_a-zA-Z0-9-\\S]+)' icon='(\\S+)'").search(stdout)
+        "application: label='([\w\d\s]+)'").search(stdout)
     icon_path = (match and match.group(2)) or None
     return icon_path
 
